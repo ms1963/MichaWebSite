@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JQuery Mobile Tweet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css' />
+    <link rel='stylesheet' href='./screen.css' />
+    <script src='http://code.jquery.com/jquery-1.6.4.min.js'></script>
+    <script src='http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js'></script>
+    <script src='./twitter_feed.js'></script>
+    <script src='./init.js'></script>
+
+    <script>
+      $(document).ready(function() {
+        $().initApp();
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Begin: Main tweet list view -->
+    <section id='pageTweetList' data-role='page'>
+      <header data-role='header' data-position='fixed'>
+        <h1>jqmTweet</h1>
+        <a href='#pageSettings'
+          data-role='button'
+          data-transition='flip'
+          data-icon='gear'
+          data-iconpos='notext'
+          class='ui-btn-right'>Options</a>
+      </header>
+      <div class='content' data-role='content'>
+        <ul data-role='listview'>
+        </ul>
+      </div>
+      <a href='#pageError'
+        id='show-error-page'
+        data-role='button'
+        data-rel='dialog'
+        data-transition='pop'
+        style='display: none'>Show error page</a>
+      <footer data-role='footer' data-position='fixed'><h1>O'Reilly <i>jQuery Mobile</i></h1></footer>
+    </section>
+    <!-- End: Main tweet list view -->
+
+    <!-- Begin: Settings page -->
+    <section id='pageSettings' data-role='page' data-add-back-btn='true'>
+      <header data-role='header'><h1>jqmTweet</h1></header>
+      <div class='content' data-role='content'>
+        <h3>Settings</h3>
+        <div data-role='fieldcontain'>
+          <label for='username'>Twitter User Name:</label>
+          <input type='text' name='username' id='username' value='' />
+        </div>
+        <div data-role='fieldcontain'>
+          <label for='slider'>Number of tweets to display:</label>
+          <input type='range' id='slider' name='slider' min='5' max='50' value='' />
+        </div>
+      </div>
+      <footer data-role='footer'><h1>O'Reilly <i>jQuery Mobile</i></h1></footer>
+    </section>
+    <!-- End: Settings page -->
+
+    <!-- Begin: Tweet detail view -->
+    <section id='pageTweetDetail' data-role='page' data-add-back-btn='true'>
+      <header data-role='header'><h1>jqmTweeter</h1></header>
+      <div class='content' data-role='content'>
+        <div class='container-tweet'>
+          <p>Tweet!</p>
+        </div>
+      </div>
+      <footer data-role='footer'><h1>O'Reilly <i>jQuery Mobile</i></h1></footer>
+    </section>
+    <!-- End: Tweet detail view -->
+
+    <!-- Begin: Error page -->
+    <section id='pageError' data-role='page' data-theme='e'>
+      <header data-role='header'><h1>jqmTweeter</h1></header>
+      <div class='content' data-role='content'>
+      </div>
+      <footer data-role='footer'><h1>O'Reilly <i>jQuery Mobile</i></h1></footer>
+    </section>
+    <!-- End: Error page  -->
+  </body>
+</html>

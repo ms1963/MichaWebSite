@@ -1,0 +1,82 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Contacts App</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="utils.js"> </script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+<!-- add to home screen code from http://cubiq.org -->
+
+<link rel="apple-touch-icon" href="addtohomescreen/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="72x72" href="addtohomescreen/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="addtohomescreen/touch-icon-iphone4.png">
+<script type="text/javascript">
+
+var addToHomeConfig = {
+	returningVisitor: true,		// Show the message only to returning visitors (ie: don't show it the first time)
+	expire: 720					// Show the message only once every 12 hours
+};
+
+</script>
+<link rel="stylesheet" href="addtohomescreen/add2home.css">
+<script type="application/javascript" src="addtohomescreen/add2home.js" charset="utf-8"></script>
+
+
+<!-- end of add to home screen -->
+
+</head> 
+<body> 
+
+<?php if (isset($_SESSION["user"])) session_destroy(); ?>
+
+<div id="login_page" data-role="page" data-theme="c">
+	<div data-position="fixed" data-role="header" data-theme="b">
+         <a href="about.html" data-role="button" data-icon="info">Info</a>
+		<h1>Contacts App</h1>
+        
+	</div>
+	<div data-role="content">
+    	<h3> Please, provide your credentials: </h3>	
+        <br/>
+  
+		<form id="loginForm" class="errorstyle"> 
+        	<fieldset>
+            	<div data-role= "fieldcontain">
+                	<label for="user"> user name:</label>
+                    <input type="text" id="user" name="user" />
+                 </div>
+                 <div data-role= "fieldcontain">
+                    <label for="pass"> password: </label>
+                    <input type="password" id="pass" name="pass" />
+                 </div>
+                 <div data-role = "fieldcontain">
+                    <input type="submit" id="submitLogin" value="log in" />
+                </div>
+                <div data-role="fieldcontain" id="error" class="error_msg">
+                 
+             	</div>  
+            </fieldset>     
+        </form>  
+		<style>
+			     #error  { 
+							text-align: justify;
+							color: red;		
+						 }
+		</style>
+	</div>
+  
+	<div data-position="fixed" data-role="footer" data-theme="b">
+		<h4> &copy; 2013 by Michael </h4>
+	</div>
+</div>
+
+
+</body>
+</html>
+
